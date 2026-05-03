@@ -3,8 +3,10 @@ import os
 from flask import Flask, request, jsonify
 from odoo_service import create_portal_user
 from odoo_service import get_quotation_stats
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/quotation-stats', methods=['POST'])
 def quotation_stats():
